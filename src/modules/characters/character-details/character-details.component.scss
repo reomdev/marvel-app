@@ -1,0 +1,35 @@
+a {
+  display: block;
+  margin: 0 auto;
+  width: 12rem;
+  margin-top: 1rem;
+
+  h4 {
+    margin-bottom: 0;
+  }
+}
+
+.container-fluid {
+  background: var(--primary-color) !important;
+  min-height: 100vh;
+  color: white;
+
+  .potrait {
+    height: 100%;
+    border-radius: .5rem;
+  }
+}
+
+.character--comics {
+  height: 25vh;
+  overflow: auto;
+}
+
+.title--character {
+  font-size: 4rem;
+}
+
+.mr-2 {
+  margin-right: .5rem;
+  margin-top: .5rem;
+}

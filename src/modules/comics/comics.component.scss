@@ -1,0 +1,51 @@
+.bg--title-comics {
+  width: fit-content;
+  background: var(--primary-color);
+  position: relative;
+  display: block;
+  margin: 0 auto;
+}
+
+.button--comics {
+  letter-spacing: 1.5px;
+  display: block;
+  margin: 0 auto;
+
+  h5 {
+    margin-bottom: 0;
+  }
+}
+
+.comics {
+  position: relative;
+  z-index: 100;
+  background: var(--second-color);
+  min-height: 100vh;
+}
+
+.card--comics {
+  padding: 1.5rem;
+  border: none;
+  cursor: pointer;
+  background: transparent;
+  color: white;
+
+  &:hover {
+    img {
+      filter: drop-shadow(5px 5px 20px var(--primary-color)) invert(10%)
+    }
+  }
+}
+
+.comics-col-6 {
+  height: 60vh;
+}
+
+.title--comics {
+  padding-top: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: 4.5rem;
+  letter-spacing: 1px;
+  color: white;
+}

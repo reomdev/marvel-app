@@ -1,0 +1,8 @@
+<a
+  class="card card--comics"
+  [routerLink]="['/comics/details', comic.id]"
+  routerLinkActive="router-link-active">
+  <img [src]="comic.thumbnail" alt="comic" class="img-fluid comics-col-6" />
+  <br />
+  <h5 class="card-comics--title">{{ comic.title }}</h5>
+</a>

@@ -1,0 +1,30 @@
+<section class="characters">
+  <br />
+  <br />
+  <div class="bg--title-characters">
+    <h1 class="title--characters text-center">MARVEL'S MIGHTIEST HEROES</h1>
+  </div>
+  <br />
+  <div class="d-flex justify-content-center mt-5" *ngIf="loading">
+    <app-loading></app-loading>
+  </div>
+  <div class="row" *ngIf="!loading">
+    <div class="col-md-4" *ngFor="let item of characters">
+      <app-character [character]="item"></app-character>
+    </div>
+  </div>
+  <div class="row" *ngIf="!loading">
+    <div class="col-md-12">
+      <br />
+      <br />
+      <button
+        class="btn btn-dark marvel-font m-auto d-block"
+        [routerLink]="['/home']"
+        routerLinkActive="router-link-active">
+        <h5 class="fw-bold mb-0">COME BACK</h5>
+      </button>
+      <br />
+      <br />
+    </div>
+  </div>
+</section>

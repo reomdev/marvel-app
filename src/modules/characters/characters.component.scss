@@ -1,0 +1,26 @@
+.bg--title-characters {
+  width: fit-content;
+  background: var(--second-color);
+  position: relative;
+  display: block;
+  margin: 0 auto;
+}
+
+.characters {
+  min-height: 100vh;
+  background-color: var(--primary-color);
+
+  .row {
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+}
+
+.title--characters {
+  padding-top: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: 4.5rem;
+  letter-spacing: 1px;
+  color: white;
+}

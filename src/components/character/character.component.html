@@ -1,0 +1,13 @@
+<a
+  class="card character--card"
+  [routerLink]="['/characters/details', character.id]"
+  routerLinkActive="router-link-active">
+  <img [src]="character.thumbnail" class="card-img-top" alt="character" />
+  <h1 class="card--title marvel-font">{{ character.name | uppercase }}</h1>
+  <p class="card-text" *ngIf="character.description !== ''">
+    {{ character.description }}
+  </p>
+  <h5 class="text-center fw-bold" *ngIf="!character.description">
+    DON'T HAVE DESCRIPTION
+  </h5>
+</a>

@@ -30,7 +30,10 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/core/global/mixins.scss",
+              "src/styles.scss",
+              "node_modules/bootstrap/scss/bootstrap.scss",
+              "src/core/global/fonts.scss"
             ],
             "scripts": []
           },
@@ -56,7 +59,13 @@
               "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
-              "namedChunks": true
+              "namedChunks": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.development.ts"
+                }
+              ]
             }
           },
           "defaultConfiguration": "production"
@@ -97,8 +106,23 @@
             ],
             "scripts": []
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "3215479d-b090-4c09-8cb4-ab4b6aaae261",
+    "schematicCollections": [
+      "@angular-eslint/schematics"
+    ]
   }
 }

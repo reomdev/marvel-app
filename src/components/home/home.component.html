@@ -1,0 +1,87 @@
+<div class="container-fluid">
+  <section class="home parallax">
+    <div class="overlay"></div>
+    <div class="home--card-title">
+      <div class="home--card-body-title">
+        <h1 class="title--card">MARVEL UNIVERSE</h1>
+      </div>
+    </div>
+  </section>
+  <section class="comics">
+    <br class="d-none d-sm-none d-md-block"/>
+    <br class="d-none d-sm-none d-md-block"/>
+    <div class="bg--title-comics">
+      <h1 class="title--comics text-center">MARVEL UNIVERSE COMICS</h1>
+    </div>
+    <br />
+    <div class="row">
+      <div class="col-md-6">
+        <a
+          class="card card--comics"
+          [routerLink]="['/comics/details', comic_potrait.id]"
+          routerLinkActive="router-link-active">
+          <img
+            src="{{
+              comic_potrait.thumbnail.path +
+                '.' +
+                comic_potrait.thumbnail.extension
+            }}"
+            class="img-fluid"
+            alt="comic" />
+        </a>
+      </div>
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-6" *ngFor="let item of comics">
+            <div class="card card--comics">
+              <app-comic [comic]="item"></app-comic>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <br />
+        <br />
+        <button
+          class="btn btn-danger btn-lg marvel-font button--comics"
+          (click)="goTo('comics')">
+          <h5>SEE MORE</h5>
+        </button>
+        <br />
+        <br />
+      </div>
+    </div>
+  </section>
+  <section class="spiderman-statement parallax">
+    <div class="overlay-spiderman"></div>
+    <h1 class="statement-size">{{ statement | uppercase }}</h1>
+  </section>
+  <section class="characters">
+    <br class="d-none d-sm-none d-md-block"/>
+    <br class="d-none d-sm-none d-md-block"/>
+    <div class="bg--title-characters">
+      <h1 class="title--characters text-center">MARVEL'S MIGHTIEST HEROES</h1>
+    </div>
+    <br />
+    <div class="row">
+      <div class="col-md-4" *ngFor="let item of characters">
+        <app-character [character]="item"></app-character>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <br />
+        <br />
+        <button
+          class="btn btn-dark btn-lg button--characters marvel-font m-auto d-block"
+          (click)="goTo('characters')">
+          <h5 class="fw-bold mb-0">SEE MORE</h5>
+        </button>
+        <br />
+        <br />
+      </div>
+    </div>
+  </section>
+</div>

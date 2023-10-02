@@ -1,0 +1,37 @@
+<div class="container-fluid">
+  <div class="wrap-loading" *ngIf="loading">
+    <app-loading></app-loading>
+  </div>
+  <div class="row p-5" *ngIf="!loading">
+    <div class="col-md-6 mt-4">
+      <img
+        [src]="arrow_left"
+        class="img-fluid arrow-left"
+        (click)="goBack()"
+        (keydown)="goBack()"
+        alt="arrow_left" />
+      <h1 class="title--comic">{{ comic.title | uppercase }}</h1>
+      <h4>{{ comic.description }}</h4>
+      <h1 class="mt-5">CHARACTER COMICS</h1>
+      <div class="character--comics">
+        <button
+          *ngFor="let item of comic.characters.items"
+          class="btn btn-sm btn-danger"
+          (click)="goCharacterDetails(item.resourceURI)">
+          {{ item.name | uppercase }}
+        </button>
+      </div>
+      <a
+        [routerLink]="['/comics']"
+        routerLinkActive="router-link-active"
+        class="btn btn-light primary-color marvel-font">
+        <h4 class="mb-0">SEE MORE COMICS</h4>
+      </a>
+      
+    </div>
+    <div class="col-md-6">
+      <img [src]="comic.thumbnail" class="img-fluid potrait" alt="comic-img" />
+    </div>
+  </div>
+  
+</div>

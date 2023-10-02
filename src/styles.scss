@@ -1,1 +1,60 @@
-/* You can add global styles to this file, and also import other style files */
+@import './core/global/mixins.scss';
+
+:root {
+  --primary-color: #e23636;
+  --second-color: #000000;
+  --thirt-color: #504a4a;
+  --fourth-color: #518cca;
+  --fiveth-color: #f78f3f;
+}
+
+body,
+h1,
+html {
+  font-family: 'Marvel';
+  color: white;
+}
+
+.arrow-left {
+  width: 2rem !important;
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+.primary-color {
+  color: var(--primary-color) !important;
+}
+
+.second-color {
+  color: var(--second-color) !important;
+}
+
+.thirt-color {
+  color: var(--thirt-color) !important;
+}
+
+.fourth-color {
+  color: var(--fourth-color) !important;
+}
+
+.fiveth-color {
+  color: var(--fiveth-color) !important;
+}
+
+.marvel-font {
+  font-family: 'Marvel' !important;
+}
+
+.mh-100 {
+  max-height: 100vh !important;
+}
+
+.wrap-loading {
+  display: grid;
+  height: 70vh;
+  place-content: center;
+}

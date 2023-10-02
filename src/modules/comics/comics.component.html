@@ -1,0 +1,32 @@
+<div class="container-fluid comics">
+  <br />
+  <br />
+  <div class="bg--title-comics">
+    <h1 class="title--comics text-center">MARVEL UNIVERSE COMICS</h1>
+  </div>
+  <br />
+  <div class="d-flex justify-content-center mt-5" *ngIf="loading">
+    <app-loading></app-loading>
+  </div>
+  <div class="row" *ngIf="!loading">
+    <div class="col-md-3" *ngFor="let item of comics">
+      <div class="card card--comics">
+        <app-comic [comic]="item"></app-comic>
+      </div>
+    </div>
+  </div>
+  <div class="row" *ngIf="!loading">
+    <div class="col-md-12">
+      <br />
+      <br />
+      <button
+        class="btn btn-danger btn-lg marvel-font button--comics"
+        [routerLink]="['/home']"
+        routerLinkActive="router-link-active">
+        <h5>COME BACK</h5>
+      </button>
+      <br />
+      <br />
+    </div>
+  </div>
+</div>
