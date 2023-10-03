@@ -9,6 +9,10 @@ a {
   }
 }
 
+.character--row {
+  padding: 1.5rem !important;
+}
+
 .container-fluid {
   background: var(--primary-color) !important;
   min-height: 100vh;

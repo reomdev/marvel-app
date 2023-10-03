@@ -1,8 +1,9 @@
+<!-- eslint-disable @angular-eslint/template/interactive-supports-focus -->
 <div class="container-fluid">
   <div class="wrap-loading" *ngIf="loading">
     <app-loading></app-loading>
   </div>
-  <div class="row p-5" *ngIf="!loading">
+  <div class="row character--row" *ngIf="!loading">
     <div class="col-md-6">
       <img
         [src]="arrow_left"
