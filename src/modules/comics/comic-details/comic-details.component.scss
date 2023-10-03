@@ -16,9 +16,8 @@ a {
     height: 90%;
 
     @include small {
-      height: 30rem;
+      height: 25rem;
       width: 90%;
-      object-fit: none;
     }
 
     border-radius: 0.5rem;

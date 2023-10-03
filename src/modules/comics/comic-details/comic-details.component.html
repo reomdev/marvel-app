@@ -19,12 +19,14 @@
       <h4 *ngIf="comic.description !== ''; else notdescription">
         {{ comic.description }}
       </h4>
-      <ng-template #notdescription> 
+      <ng-template #notdescription>
         <br />
         <h6 class="text-center">DON'T HAVE DESCRIPTION 😕</h6>
       </ng-template>
       <h1 class="mt-5">CHARACTER COMICS</h1>
-      <div class="character--comics" *ngIf="comic.characters.items.length !== 0; else notcharacters">
+      <div
+        class="character--comics"
+        *ngIf="comic.characters.items.length !== 0; else notcharacters">
         <button
           *ngFor="let item of comic.characters.items"
           class="btn btn-sm btn-danger"
