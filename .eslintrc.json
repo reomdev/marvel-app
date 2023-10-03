@@ -34,7 +34,7 @@
         ],
         "@typescript-eslint/no-explicit-any": "off",
         "@angular-eslint/template/interactive-supports-focus": [
-          "warning"
+          "off"
         ]
       }
     },
