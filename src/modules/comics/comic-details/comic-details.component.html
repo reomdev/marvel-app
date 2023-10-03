@@ -3,7 +3,7 @@
   <div class="wrap-loading" *ngIf="loading">
     <app-loading></app-loading>
   </div>
-  <div class="row p-5" *ngIf="!loading">
+  <div class="row comic--row" *ngIf="!loading">
     <div class="col-md-6 mt-4">
       <img
         [src]="arrow_left"
@@ -11,10 +11,20 @@
         (click)="goBack()"
         (keydown)="goBack()"
         alt="arrow_left" />
+      <img
+        [src]="comic.thumbnail"
+        class="img-fluid potrait d-block d-sm-block d-md-none"
+        alt="comic-img" />
       <h1 class="title--comic">{{ comic.title | uppercase }}</h1>
-      <h4>{{ comic.description }}</h4>
+      <h4 *ngIf="comic.description !== ''; else notdescription">
+        {{ comic.description }}
+      </h4>
+      <ng-template #notdescription> 
+        <br />
+        <h6 class="text-center">DON'T HAVE DESCRIPTION 😕</h6>
+      </ng-template>
       <h1 class="mt-5">CHARACTER COMICS</h1>
-      <div class="character--comics">
+      <div class="character--comics" *ngIf="comic.characters.items.length !== 0; else notcharacters">
         <button
           *ngFor="let item of comic.characters.items"
           class="btn btn-sm btn-danger"
@@ -22,6 +32,10 @@
           {{ item.name | uppercase }}
         </button>
       </div>
+      <ng-template #notcharacters>
+        <br />
+        <h6 class="text-center">DON'T HAVE CHARACTERS 😕</h6>
+      </ng-template>
       <a
         [routerLink]="['/comics']"
         routerLinkActive="router-link-active"
@@ -29,7 +43,7 @@
         <h4 class="mb-0">SEE MORE COMICS</h4>
       </a>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-6 d-none d-sm-none d-md-block">
       <img [src]="comic.thumbnail" class="img-fluid potrait" alt="comic-img" />
     </div>
   </div>
