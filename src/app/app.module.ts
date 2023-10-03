@@ -6,11 +6,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { httpInterceptorProviders } from 'src/core/interceptors/app-interceptor';
 import { HomeComponent } from 'src/components/home/home.component';
+import { LocationStrategy, PathLocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, HomeComponent],
-  providers: [httpInterceptorProviders],
+  providers: [
+    httpInterceptorProviders,
+    { provide: LocationStrategy, useClass: PathLocationStrategy },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
